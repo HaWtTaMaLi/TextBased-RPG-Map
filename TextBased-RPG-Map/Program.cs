@@ -22,9 +22,19 @@ namespace TextBased_RPG_Map
         static void Main()
         {
             Console.WriteLine("=== RPG Map ===");
-
+            Console.WriteLine("");
+            DisplayMap();
         }
 
-        
+        static void DisplayMap()
+        {
+            int y;
+            int x;
+
+            for(y = 0; y < 12; y++)
+            {
+                Console.WriteLine(map[y,0]);
+            }
+        }
     }
 }
