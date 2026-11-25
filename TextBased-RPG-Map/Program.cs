@@ -33,10 +33,20 @@ namespace TextBased_RPG_Map
         };
         static void Main()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("==============  RPG Map  ===============");
             Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.White;
             DisplayMap();
             Legend();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("========================================");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("\nPress any key to exit...");
         }
 
         static void DisplayMap()
@@ -56,16 +66,51 @@ namespace TextBased_RPG_Map
 
         static void Legend()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("==============  Legend  ================");
-            Console.Write("` = Grass");
+            //Grass
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("` ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" Grass");
+
+            //Spacer
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("|".PadLeft(3).PadRight(4));
-            Console.Write("^ = Mountains");
+
+            //Mountains
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.Write("^ ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" Mountains");
+
+            //Spacer
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("|".PadLeft(3).PadRight(4));
-            Console.WriteLine("¥ = Treee");
-            Console.Write("~ = Water");
+
+            //Tree
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("¥ ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" Tree");
+
+            //Water
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("~ ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" Water");
+
+            //Spacer
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("|".PadLeft(3).PadRight(4));
-            Console.Write("".PadRight(13)); //filler
-            Console.Write("|".PadLeft(3).PadRight(4));
+
+            //filler
+            Console.Write("".PadRight(12));
+
+            //Spacer
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("|".PadLeft(3).PadRight(4));
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
