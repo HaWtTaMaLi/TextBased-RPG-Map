@@ -32,6 +32,9 @@ namespace TextBased_RPG_Map
             {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','^','^','^','^','^','^','^','^','^','^','^','^','^','`','`','`','`','`','`','`','`','`','`'}  // #24
         };
 
+        static int y;
+        static int x;
+
         static void Main()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -53,17 +56,16 @@ namespace TextBased_RPG_Map
 
         static void DisplayMap()
         {
-            int y;
-            int x;
-
-            for(y = 0; y < 24; y++)
+            for (y = 0; y < 24; y++)
             {
-                for(x = 0; x < 40; x++)
+                for (x = 0; x < 40; x++)
                 {
+                    ColourTheMap();
                     Console.Write(map[y, x]);
                 }
                 Console.WriteLine("");
             }
+            Console.BackgroundColor = ConsoleColor.Black;
         }
 
         static void Legend()
@@ -113,6 +115,30 @@ namespace TextBased_RPG_Map
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("|".PadLeft(3).PadRight(4));
             Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        static void ColourTheMap()
+        {
+            if (map[y, x] == '`')
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+            }
+            if (map[y, x] == '^')
+            {
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.BackgroundColor = ConsoleColor.DarkGray;
+            }
+            if (map[y, x] == '¥')
+            {
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+            }
+            if (map[y, x] == '~')
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.BackgroundColor = ConsoleColor.Blue;
+            }
         }
     }
 }
